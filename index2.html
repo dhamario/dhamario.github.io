@@ -1,0 +1,145 @@
+<html>
+<head>
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width =device-width, initial-scale =1">
+  
+  <link rel="stylesheet" href="https://kit.fontawesome.com/afb27db947.js">
+  <link rel="stylesheet" href="style2.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+  <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+  <section id="banner">
+    <a href="index.html">
+      <img src="images/logo.png" class="logo">
+    </a>
+    <div class="banner-text">
+      <h1>Uzdah Serum</h1>
+      <p>100% Glowing Smooting Anti Aging</p>
+      <div class="banner-btn">
+        <a href="#"><span></span>Market Place</a>
+        <a href="#"><span></span>Sosial Media</a>
+      </div>
+    </div>
+  </section>
+
+  <div id="sideNav">
+    <nav>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="index2.html">QUESTION</a></li>
+        <li><a href="index3.html">LOCATION</a></li>
+        <li><a href="index4.html">CONTACT US</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div id="manuBtn">
+    <img src="images/menu.png" id="menu" alt="">
+  </div>
+
+  <!-- Features -->
+
+  <section id="features">
+    <div class="title-text">
+      <p>PERTANYAAN</p>
+      <h1>Ada Pertanyaan?</h1>
+    </div>
+    <div class="fature-box">
+<button class="accordion">Section 1</button>
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<button class="accordion">Section 2</button>
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<button class="accordion">Section 3</button>
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+    </div>
+  </section>
+  
+
+  <!-- footer -->
+
+  <section id="footer">
+    <img src="images/serum.png" class="footer-img" alt="">
+    <div class="title-text">
+      <p>KONTAK</p>
+      <h1>Kunjungi Toko Hari Ini</h1>
+    </div>
+<div class="footer-row">
+  <div class="footer-left">
+    <h1>Buka Setiap Hari</h1>
+    <p> <i class="fas fa-clock"></i>Senin sampai Jum'at - 9am to 9pm</p>
+    <p> <i class="fas fa-clock"></i>Sabtu dan Minggu - 8am to 11pm</p>
+  </div>
+    <div class="footer-right">
+      <h1>Alamat</h1>
+      <p>Cimaanggis Tapos, Depok<i class="fas fa-map-marker-alt"></i></p>
+      <p>dhamario.github.io<i class="fas fa-paper-plane"></i></p>
+      <p>+62 851 5681 2670<i class="fas fa-phone"></i></p>
+    </div>
+</div>
+
+<div class="social-links">
+  <i class="fab fa-twitter"></i>
+  <i class="fab fa-facebook-square"></i>
+  <i class="fab fa-whatsapp"></i>
+  <i class="fab fa-instagram"></i>
+    <p>CopyRight</p>
+
+</div>
+
+  </section>
+
+  <script>
+    var manuBtn = document.getElementById("manuBtn")
+    var sideNav = document.getElementById("sideNav")
+    var menu = document.getElementById("menu")
+
+    sideNav.style.right == "-250px";
+
+    manuBtn.onclick = function(){
+      if(sideNav.style.right == "-250px"){
+        sideNav.style.right = "0";
+        menu.src = "images/close.png";
+      }
+      else{
+        sideNav.style.right = "-250px";
+        menu.src = "images/menu.png";
+      }
+    }
+
+    var scroll = new SmoothScroll('a[href*="#"]', {
+	  speed: 500,
+	  speedAsDuration: true
+    });
+  </script>
+
+<script>
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+  
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      } 
+    });
+  }
+  </script>
+
+
+</body>
+</html>
