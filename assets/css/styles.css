@@ -748,6 +748,15 @@ body.light-theme{
 
 
 /*=============== CONTACT ===============*/
+.btnpesan{
+  margin-bottom: 2.5rem;
+  background-color: var(--first-color);
+  color: var(--body-color);
+  padding: .75rem 1rem;
+  border-radius: .5rem;
+  font-weight: var(--font-medium);
+  transition: .4s;
+}
 .contact__container{
   row-gap: 3rem;
   padding-bottom: 3rem;

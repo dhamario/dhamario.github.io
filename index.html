@@ -594,9 +594,7 @@
 
                     <div class="contact_content">
                             <h3 class="contact__title">Write me your project</h3>
-                            <p class="my-alert d-none">Terima kasih telah menghubungi kami.</p>
-                            <br>
-                            
+                            <p class="btnpesan my-alert d-none">Terima kasih telah menghubungi kami.</p>
 
                             <form method="post" autocomplete="off" name="google-sheet">
                                 <div class="contact__form-div">
@@ -615,7 +613,7 @@
                                 </div>
 
                                 <button name="submit" class="button">Send Message</button>
-                            </form>
+                                </form>
                     </div>
                 </div>
             </section>
@@ -667,7 +665,9 @@
               e.preventDefault()
               fetch(scriptURL, { method: 'POST', body: new FormData(form)})
                 .then(response => {
-                    alert("Terima kasih telah menghubungi kami. Kami Akan Segera Menghubungi Anda")
+
+                    myAlert.classList.toggle('d-none');
+                
                     form.reset()
                 })
                 .catch(error => console.error('Error!', error.message))
