@@ -667,7 +667,7 @@
               e.preventDefault()
               fetch(scriptURL, { method: 'POST', body: new FormData(form)})
                 .then(response => {
-                    myAlert.classList.toggle('d-none')
+                    alert("Terima kasih telah menghubungi kami. Kami Akan Segera Menghubungi Anda")
                     form.reset()
                 })
                 .catch(error => console.error('Error!', error.message))
