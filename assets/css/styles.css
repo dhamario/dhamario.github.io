@@ -635,6 +635,19 @@ body.light-theme{
   cursor: pointer;
 }
 
+.bx-loader-alt {
+  animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(359deg);
+  }
+}
+
 /*Active modal*/
 .active-modal {
   opacity: 1;
@@ -748,6 +761,24 @@ body.light-theme{
 
 
 /*=============== CONTACT ===============*/
+.btn-kirim{
+  margin-bottom: 2.5rem;
+  background-color: var(--first-color);
+  color: var(--body-color);
+  padding: .75rem 1rem;
+  border-radius: .5rem;
+  font-weight: var(--font-medium);
+}
+.btn-loading{
+  margin-bottom: 2.5rem;
+  background-color: var(--first-color);
+  color: var(--body-color);
+  padding: .75rem 1rem;
+  border-radius: .5rem;
+  font-weight: var(--font-medium);
+  transition: .4s;
+}
+
 .btnpesan{
   margin-bottom: 2.5rem;
   background-color: var(--first-color);

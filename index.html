@@ -594,7 +594,7 @@
 
                     <div class="contact_content">
                             <h3 class="contact__title">Write me your project</h3>
-                            <p class="btnpesan my-alert d-none">Terima kasih telah menghubungi kami.</p>
+                            <p class="btnpesan my-alert d-none">Terima kasih telah menghubungi kami. <i class='bx bx-x services__modal-close' ></i></p>
 
                             <form method="post" autocomplete="off" name="google-sheet">
                                 <div class="contact__form-div">
@@ -612,7 +612,8 @@
                                     <textarea name="Message" id="" cols="30" rows="10" name="Message" placeholder="Write your project" class="contact__form-input"></textarea>
                                 </div>
 
-                                <button name="submit" class="button">Send Message</button>
+                                <button name="submit" class="btn-kirim">Send Message</button>
+                                <button name="submit" class="btn-loading d-none"><i class='bx bx-loader-alt'></i></button>
                                 </form>
                     </div>
                 </div>
@@ -659,16 +660,28 @@
         <script>
             const scriptURL = 'https://script.google.com/macros/s/AKfycbz9eFhbqL9VPdw7W_q0QODPWdvPA6DGefYPXkPuLSx8L-teZfCqLwiR0-oeVhtF6Ccs/exec'
             const form = document.forms['google-sheet']
+            
+            const btnPesan = document.querySelector('.btn-kirim')
+            const btnLoading = document.querySelector('.btn-loading')
             const myAlert = document.querySelector('.my-alert')
           
             form.addEventListener('submit', e => {
               e.preventDefault()
+            // ketika tombol submit diklik
+            // tampilkan tombol loading, hilangkan tombol kirim
+            btnLoading.classList.toggle('d-none')
+            btnPesan.classList.toggle('d-none')
+              
               fetch(scriptURL, { method: 'POST', body: new FormData(form)})
                 .then(response => {
-
-                    myAlert.classList.toggle('d-none');
-                
-                    form.reset()
+            // tampilkan tombol kirim, hilangkan tombol loading
+            btnLoading.classList.toggle('d-none')
+            btnPesan.classList.toggle('d-none')
+            // tampilkan alert
+            myAlert.classList.toggle('d-none')
+            // reset formnya
+            form.reset()
+            console.log('Success!', response)
                 })
                 .catch(error => console.error('Error!', error.message))
             })
